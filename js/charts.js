@@ -23,7 +23,6 @@ new Chart(ctx1, {
   }
 });
 
-// Bar Chart - Category
 const ctx2 = document.getElementById('barChart').getContext('2d');
 new Chart(ctx2, {
   type: 'bar',

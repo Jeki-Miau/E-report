@@ -1,16 +1,13 @@
-// Cek login
 if (!localStorage.getItem('isLoggedIn')) {
   window.location.href = 'index.html';
 }
 
-// Logout
 document.getElementById('logoutLink').addEventListener('click', (e) => {
   e.preventDefault();
   localStorage.removeItem('isLoggedIn');
   window.location.href = 'index.html';
 });
 
-// Counter Animation
 const counters = document.querySelectorAll('.counter');
 counters.forEach(counter => {
   const target = +counter.getAttribute('data-target');

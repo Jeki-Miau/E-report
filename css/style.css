@@ -11,6 +11,7 @@ body {
   color: var(--text);
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,4 +43,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .badge {
   font-weight: 500;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
