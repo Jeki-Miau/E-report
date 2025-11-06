@@ -1,0 +1,45 @@
+:root {
+  --primary: #6a8cff;
+  --light: #ffffff;
+  --bg: #f9fafc;
+  --text: #2d3436;
+  --border: #eaeef4;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.stat-card {
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.table thead th {
+  font-weight: 600;
+  color: var(--text);
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(106, 140, 255, 0.04);
+}
+
+.badge {
+  font-weight: 500;
+}
