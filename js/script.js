@@ -1,16 +1,13 @@
-// Cek login
 if (!localStorage.getItem('isLoggedIn')) {
   window.location.href = 'index.html';
 }
 
-// Logout
 document.getElementById('logoutLink').addEventListener('click', (e) => {
   e.preventDefault();
   localStorage.removeItem('isLoggedIn');
   window.location.href = 'index.html';
 });
 
-// Counter Animation
 const counters = document.querySelectorAll('.counter');
 counters.forEach(counter => {
   const target = +counter.getAttribute('data-target');
@@ -27,7 +24,6 @@ counters.forEach(counter => {
   }, stepTime);
 });
 
-// Data Reports (dari localStorage atau default)
 let reports = JSON.parse(localStorage.getItem('reports')) || [
   { id: 1, title: "Q3 Financial Summary", category: "Finance", status: "Done", date: "2025-10-28" },
   { id: 2, title: "User Engagement Report", category: "Marketing", status: "Pending", date: "2025-11-01" },
@@ -40,7 +36,6 @@ function saveReports() {
   localStorage.setItem('reports', JSON.stringify(reports));
 }
 
-// Render Tabel
 function renderTable() {
   const tbody = document.querySelector('#reportTable tbody');
   tbody.innerHTML = '';
@@ -60,7 +55,6 @@ function renderTable() {
     tbody.appendChild(row);
   });
 
-  // Delete Button
   document.querySelectorAll('.delete-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = +btn.dataset.id;
@@ -70,7 +64,6 @@ function renderTable() {
     });
   });
 
-  // ✅ EDIT BUTTON (baru)
   document.querySelectorAll('.edit-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = +btn.dataset.id;
@@ -89,7 +82,6 @@ function renderTable() {
   });
 }
 
-// Save Edit
 document.getElementById('saveEditBtn').addEventListener('click', () => {
   const id = +document.getElementById('editId').value;
   const title = document.getElementById('editTitle').value.trim();
@@ -112,7 +104,6 @@ document.getElementById('saveEditBtn').addEventListener('click', () => {
   }
 });
 
-// Add Report
 document.getElementById('addReportBtn').addEventListener('click', () => {
   const title = prompt("Judul laporan:");
   if (!title) return;
@@ -131,7 +122,6 @@ document.getElementById('addReportBtn').addEventListener('click', () => {
   renderTable();
 });
 
-// Live Search
 document.getElementById('searchInput').addEventListener('input', () => {
   const query = document.getElementById('searchInput').value.toLowerCase();
   document.querySelectorAll('#reportTable tbody tr').forEach(row => {
@@ -140,5 +130,4 @@ document.getElementById('searchInput').addEventListener('input', () => {
   });
 });
 
-// Render awal
 renderTable();
